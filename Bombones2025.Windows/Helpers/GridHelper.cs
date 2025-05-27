@@ -42,6 +42,10 @@ namespace Bombones2025.Windows.Helpers
                     r.Cells[0].Value=pais.PaisId;
                     r.Cells[1].Value = pais.NombrePais;
                     break;
+                case FormaDePago formaDePago:
+                    r.Cells[0].Value = formaDePago.FormaDePagoId;
+                    r.Cells[1].Value = formaDePago.Descripcion;
+                    break;  
             }
 
             r.Tag = obj;
