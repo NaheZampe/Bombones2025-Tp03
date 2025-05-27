@@ -16,15 +16,15 @@ namespace Bombones2025.Windows
 {
     public partial class FrmTipoPago : Form
     {
-        private readonly PagoServicio _pagoServicio;
+        private readonly FormaDePagoServicio _pagoServicio;
 
         private List<FormaDePago> listaPago = new();
 
         private bool filterOn = false;
-        public FrmTipoPago(PagoServicio pagoservicio)
+        public FrmTipoPago(FormaDePagoServicio pagoservicio)
         {
             InitializeComponent();
-            :_pagoServicio = pagoServicio;
+            _pagoServicio = pagoservicio;
         }
 
         private void TsbNuevoPago_Click(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace Bombones2025.Windows
             {
                 if (!_pagoServicio.Existe(pagoEditar))
                 {
-                    _pagoServicio.Guardar(paagoEditar);
+                    _pagoServicio.Guardar(pagoEditar);
                     GridHelper.SetearFila(r, pagoEditar);
 
                     MessageBox.Show("Método de pago editado", "Mensaje",
@@ -142,7 +142,7 @@ namespace Bombones2025.Windows
                 if (textoParaFiltrar is null) return;
                 try
                 {
-                    formaDePago = _pagoServicio.Filtrar(textoParaFiltrar);
+                    listaPago = _pagoServicio.Filtrar(textoParaFiltrar);
                     MostrarDatosEnGrilla();
                     TsbFiltrarPago.Image = Resources.filter_intense_40px;
                     filterOn = true;
