@@ -5,7 +5,7 @@ namespace Bombones2025.Windows
 {
     public partial class FrmPrincipal : Form
     {
-        private Usuario usuario=null!;
+        private Usuario usuario = null!;
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -89,6 +89,24 @@ namespace Bombones2025.Windows
         public void SetUsuario(Usuario usuarioLogueado)
         {
             LblUsuario.Text = usuarioLogueado.Nombre;
+        }
+
+        private void formasDePagoButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormaDePagoServicio servicio = new FormaDePagoServicio();
+                FrmTipoPago frm = new FrmTipoPago(servicio) { Text = "Listado de las distintas formas de pago" };
+                frm.ShowDialog(this);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

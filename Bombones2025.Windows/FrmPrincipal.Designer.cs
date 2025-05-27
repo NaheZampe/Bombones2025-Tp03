@@ -35,6 +35,7 @@
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             LblUsuario = new ToolStripStatusLabel();
+            formasDePagoButton = new Button();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -99,11 +100,22 @@
             LblUsuario.Size = new Size(118, 17);
             LblUsuario.Text = "toolStripStatusLabel2";
             // 
+            // formasDePagoButton
+            // 
+            formasDePagoButton.Location = new Point(40, 125);
+            formasDePagoButton.Name = "formasDePagoButton";
+            formasDePagoButton.Size = new Size(87, 54);
+            formasDePagoButton.TabIndex = 2;
+            formasDePagoButton.Text = "Formas De Pago";
+            formasDePagoButton.UseVisualStyleBackColor = true;
+            formasDePagoButton.Click += formasDePagoButton_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(formasDePagoButton);
             Controls.Add(statusStrip1);
             Controls.Add(BtnChocolates);
             Controls.Add(BtnRellenos);
@@ -126,5 +138,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel LblUsuario;
+        private Button formasDePagoButton;
     }
 }
