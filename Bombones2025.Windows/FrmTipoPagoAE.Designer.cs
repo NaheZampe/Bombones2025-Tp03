@@ -91,7 +91,10 @@
             Controls.Add(BtnOKPagoAE);
             Controls.Add(TxtPagoAE);
             Controls.Add(label1);
+            MaximumSize = new Size(540, 198);
+            MinimumSize = new Size(540, 198);
             Name = "FrmTipoPagoAE";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmTipoPagoAE";
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);

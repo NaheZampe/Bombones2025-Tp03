@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             splitContainer1 = new SplitContainer();
             dgvDatosPago = new DataGridView();
             TxtCantidadPaginasPago = new TextBox();
@@ -89,12 +89,14 @@
             // 
             dgvDatosPago.AllowUserToAddRows = false;
             dgvDatosPago.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(224, 224, 224);
-            dgvDatosPago.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(224, 224, 224);
+            dgvDatosPago.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvDatosPago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDatosPago.Columns.AddRange(new DataGridViewColumn[] { colId, colPago });
             dgvDatosPago.Dock = DockStyle.Fill;
             dgvDatosPago.Location = new Point(0, 0);
+            dgvDatosPago.MaximumSize = new Size(800, 310);
+            dgvDatosPago.MinimumSize = new Size(800, 310);
             dgvDatosPago.Name = "dgvDatosPago";
             dgvDatosPago.ReadOnly = true;
             dgvDatosPago.RowHeadersVisible = false;
@@ -281,6 +283,7 @@
             colId.HeaderText = "Id";
             colId.Name = "colId";
             colId.ReadOnly = true;
+            colId.Resizable = DataGridViewTriState.False;
             colId.Visible = false;
             // 
             // colPago
@@ -289,6 +292,7 @@
             colPago.HeaderText = "Forma de Pago";
             colPago.Name = "colPago";
             colPago.ReadOnly = true;
+            colPago.Resizable = DataGridViewTriState.False;
             // 
             // FrmTipoPago
             // 
@@ -297,8 +301,11 @@
             ClientSize = new Size(800, 450);
             Controls.Add(splitContainer1);
             Controls.Add(toolStrip1);
+            MaximumSize = new Size(816, 489);
+            MinimumSize = new Size(816, 489);
             Name = "FrmTipoPago";
-            Text = "FrmTipoPago";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Tipos De Pago";
             Load += FrmTipoPago_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
